@@ -4,6 +4,7 @@ COPY dist /node
 COPY test /node/test
 COPY package.json package-lock.json /node/
 WORKDIR /node
-RUN npm install -g mocha \
+RUN npm install -g mocha && \
     npm install
+EXPOSE 3000
 CMD ["node", "app.js"]
