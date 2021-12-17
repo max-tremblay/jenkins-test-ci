@@ -2,7 +2,9 @@ pipeline {
     agent any
     stages {
         stage('Build Dockerfile') {
-            sh 'docker build -t node-test .'
+            steps{
+                sh 'docker build -t node-test .'
+            }
         }
         stage('Test mocha (unit test)') {
             agent {
