@@ -18,7 +18,7 @@ pipeline {
         }
         stage('Deploy to docker') {
             steps {
-                sh 'docker stop helloworld || true; docker rm -f helloword || true'
+                sh 'docker stop helloworld || true; docker rm -f helloworld || true'
                 sh 'docker run -d --restart unless-stopped -p 8000:3000 --name helloworld node-test'
             }
         }
